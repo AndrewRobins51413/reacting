@@ -1,11 +1,12 @@
 import React from "react"
 import {UserContextConsumer} from "./userContext"
 
+
 function Header(){
   return(
     <header>
       <UserContextConsumer>
-        {username => (
+        {({username}) => (
           <p> Welcome, {username} ?</p>
         )}
       </UserContextConsumer>

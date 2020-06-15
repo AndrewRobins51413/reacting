@@ -21,19 +21,22 @@ class App extends Component {
         <Header />
         <main>
           <UserContextConsumer>
-            {username => (
+            {({username, changeUsername}) => (
+              <>
               <p className="main">No new notes, {username} !</p>
+              <input
+                type="text"
+                name="newUsername"
+                placeholder="New Username"
+                value={this.state.newUsername}
+                onChange={this.handleChange}
+              />
+              <button onClick={() => changeUsername(this.state.newUsername)}> Change Username</button>
+              </>
             )}
           </UserContextConsumer>
         </main>
-        <input
-          type="text"
-          name="username"
-          placeholder="New Username"
-          value={this.state.username}
-          onChange={this.handleChange}
-        />
-        <button> Change Username</button>
+
       </div>
     )
   }
