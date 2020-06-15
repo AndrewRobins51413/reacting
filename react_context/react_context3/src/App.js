@@ -7,7 +7,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    newUserName:"Andy321"
+    newUserName:""
   }
 
   handleChange = (e) => {
