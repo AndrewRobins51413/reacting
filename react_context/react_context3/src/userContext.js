@@ -1,13 +1,20 @@
 import React, {Component} from "react"
-import { render } from "@testing-library/react"
 
 const {Provider, Consumer} = React.createContext()
 
 class UserContextProvider extends Component{
+  state = {
+    username: "Andy64"
+  }
+
+  changeUsername = (username) => {
+    this.setState({username})
+  }
 
   render(){
+    const {username} = this.state
     return(
-      <Provider value="Andy567">
+      <Provider value={{username, changeUsername: this.changeUsername}}>
         {this.props.children}
       </Provider>
     )
