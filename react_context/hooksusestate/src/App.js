@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import randomcolor from "randomcolor"
 
 function App() {
   const [inputData, setInputData] = useState({firstName:"", lastName:""})
@@ -20,9 +20,25 @@ function App() {
       {contact.firstName} {contact.lastName}
     </h2>)
 
+const [count, setCount] = useState(0)
+const [color, setColor] = useState("")
+
+function increment(){
+  setCount(prevCount => prevCount+1)
+}
+function decrement(){
+  setCount(prevCount => prevCount-1)
+}
+
+useEffect(() => {
+  setColor(randomcolor())
+}, [count])
 
   return (
     <>
+      <h1 style={{color:color}}>{count}</h1>
+      <button onClick={increment}>increment</button>
+      <button onClick={decrement}>decrement</button>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="First Name"
@@ -39,7 +55,10 @@ function App() {
         <br />
         <button> Add Contact </button>
       </form>
+      <div style={{color:color}}>
       {contacts}
+      </div>
+
     </>
   )
 }
