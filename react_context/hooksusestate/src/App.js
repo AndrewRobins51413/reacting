@@ -30,9 +30,20 @@ function decrement(){
   setCount(prevCount => prevCount-1)
 }
 
+//useEffect will run a function whenever the variable ([count]) changes
 useEffect(() => {
   setColor(randomcolor())
 }, [count])
+
+//useEffect here is mounted once via the empty array [] , while the interval will run its function each second
+// Also, the useEffect returns a "cleanup function" that will unmount the counter
+// useEffect(() => {
+//   const intervalId = setInterval(() => {
+//     setCount(prevCount => prevCount+1)
+//   }, 1000)
+//   return() => clearInterval(intervalId)
+// }, [])
+
 
   return (
     <>
