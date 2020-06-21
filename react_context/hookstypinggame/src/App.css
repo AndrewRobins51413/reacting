@@ -39,7 +39,7 @@
 
 html, body {
     background: black;
-    color: #00b800;
+    color: #7fb4b9;
     margin:0;
     padding: 0;
     padding-top: 10px;
@@ -57,7 +57,7 @@ button {
     margin: 0 auto;
     border: none;
     background: #a80020;
-    background: #00b800;
+    background: #7fb4b9;
     padding: 10px 20px;
     text-transform: uppercase;
 }
@@ -74,6 +74,6 @@ textarea {
     margin: 0 auto;
     outline: none;
     height: 200px;
-    background: #00b800;
+    background: #7fb4b9;
     padding: 10px;
 }
