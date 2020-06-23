@@ -43,7 +43,7 @@ html, body {
     margin:0;
     padding: 0;
     padding-top: 10px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'arial';
     text-align: center;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 button {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'arial';
     display: block;
     margin: 0 auto;
     border: none;
@@ -68,7 +68,7 @@ h1 {
 }
 
 textarea {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'arial';
     border: 3px solid black;
     width: 90%;
     margin: 0 auto;
