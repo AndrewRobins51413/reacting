@@ -29,10 +29,6 @@ function App() {
 
     }
 
-    function endGame(){
-      setTimeRunning(false)
-      setWordCount(wordsCount(text))
-    }
   //useEffect take a function followed by an array of variables(dependencies).
   //When the dependency changes, useEffect rerenders
 useEffect(() => {
@@ -41,10 +37,11 @@ useEffect(() => {
       setTimeRemaining(time => time-1)
         }, 1000)
   }else if (timeRemaining === 0){
-        endGame()
+      setTimeRunning(false)
+      setWordCount(wordsCount(text))
   }
   //add a second dependency to trigger useEffect
-}, [endGame, timeRemaining, timeRunning])
+}, [text, timeRemaining, timeRunning])
 
 
   return (
