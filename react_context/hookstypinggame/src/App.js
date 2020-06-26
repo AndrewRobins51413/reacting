@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
   const [timeRemaining, setTimeRemaining] = useState(DURATION)
   const [timeRunning, setTimeRunning] = useState (false)
   const [wordCount, setWordCount] = useState(0)
+  const textBoxRef = useRef(null)
 
   function handleChange(event){
     const {value} = event.target
@@ -16,7 +17,6 @@ function App() {
   function wordsCount(text){
     //trims off empty spaces before splitting to an array.length
     const wordsArr = text.trim().split(" ")
-    console.log (wordsArr)
     //prevents an empty string from being a "word"
     return wordsArr.filter(word => word !== "").length
   }
@@ -24,9 +24,9 @@ function App() {
     function startGame(){
       setText("")
       setTimeRemaining(DURATION)
-      setWordCount(0)
       setTimeRunning(true)
-
+      textBoxRef.current.disabled = false
+      textBoxRef.current.focus()
     }
 
   //useEffect take a function followed by an array of variables(dependencies).
