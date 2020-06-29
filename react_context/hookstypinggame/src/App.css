@@ -81,3 +81,7 @@ textarea {
 textarea:disabled {
     background-color: #a5a2a2;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}
