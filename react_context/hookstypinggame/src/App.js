@@ -7,7 +7,7 @@ function App() {
   const [timeRemaining, setTimeRemaining] = useState(DURATION)
   const [timeRunning, setTimeRunning] = useState (false)
   const [wordCount, setWordCount] = useState(0)
-  const textBoxRef = useRef(null)
+  //const textBoxRef = useRef(null)
 
   function handleChange(event){
     const {value} = event.target
@@ -25,8 +25,8 @@ function App() {
       setText("")
       setTimeRemaining(DURATION)
       setTimeRunning(true)
-      textBoxRef.current.disabled = false
-      textBoxRef.current.focus()
+      // textBoxRef.current.disabled = false
+      // textBoxRef.current.focus()
     }
 
   //useEffect take a function followed by an array of variables(dependencies).
